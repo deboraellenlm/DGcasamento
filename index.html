@@ -15,7 +15,7 @@
     }
 
     header {
-      background: url('fotos-casal.jpg') center/cover no-repeat;
+      background: url('foto-aliancas.jpg') center/cover no-repeat;
       height: 400px;
       display: flex;
       align-items: center;
@@ -29,17 +29,31 @@
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0,0,0,0.4);
+      background-color: rgba(0, 0, 0, 0.4);
     }
 
-    header div { z-index: 1; }
+    header div {
+      z-index: 1;
+      padding: 0 20px;
+    }
+
     header h1 {
-      font-size: 3rem;
+      font-size: 1.6rem;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    header h1 span {
+      display: block;
+      font-size: 1rem;
+      margin-top: 5px;
+      font-weight: normal;
     }
 
     header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
+      font-size: 1.3rem;
+      margin-top: 10px;
+      font-weight: bold;
     }
 
     section {
@@ -127,7 +141,6 @@
       color: #666;
     }
 
-    /* Contador */
     .contador-estilizado {
       margin: 20px auto;
       padding: 20px 30px;
@@ -166,7 +179,8 @@
     }
 
     @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
+      header h1 { font-size: 1.2rem; }
+      header h1 span { font-size: 0.9rem; }
       .contador-estilizado { font-size: 1.7rem; }
     }
   </style>
@@ -179,11 +193,11 @@
     Seu navegador não suporta áudio.
   </audio>
 
-  <!-- Banner -->
+  <!-- Banner com alianças e versículo -->
   <header>
     <div>
-      <h1>Débora & Gabriel</h1>
-      <p>Nosso grande dia está chegando!</p>
+      <h1>"Assim, eles já não são dois, mas sim uma só carne."<span>— Mateus 19:6</span></h1>
+      <p>Débora & Gabriel • Nosso grande dia está chegando!</p>
     </div>
   </header>
 
@@ -195,11 +209,6 @@
       <button onclick="playMusic()">🎵 Tocar música</button>
       <button onclick="pauseMusic()">⏸ Pausar</button>
     </div>
-  </section>
-
-  <!-- Frase bíblica -->
-  <section class="frase">
-    <p>"Assim, eles já não são dois, mas sim uma só carne. Portanto, o que Deus uniu, ninguém separe."<br>— Mateus 19:6</p>
   </section>
 
   <!-- Informações -->
@@ -234,7 +243,7 @@
     <p><strong>Chave Pix:</strong> 84(981867887)</p>
   </section>
 
-  <!-- Lista -->
+  <!-- Lista de Presentes -->
   <section>
     <h2>Lista de Presentes</h2>
     <p>Confira nossa lista de presentes na Magalu:</p>
