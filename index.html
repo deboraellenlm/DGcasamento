@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Débora & Gabriel | Casamento</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff5f7;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: url('fotos-casal.jpg') center/cover no-repeat;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    header div { z-index: 1; }
+    header h1 {
+      font-size: 3rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    section {
+      padding: 30px 20px;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .info-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      flex: 1 1 220px;
+    }
+
+    .pix img {
+      width: 180px;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #d63384;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #ad266b;
+    }
+
+    .frase {
+      font-style: italic;
+      margin: 30px auto 10px;
+      color: #7d2e68;
+      max-width: 600px;
+      font-size: 1.1rem;
+    }
+
+    .social-buttons {
+      margin-top: 30px;
+    }
+
+    .social-buttons a {
+      margin: 0 10px;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    iframe {
+      border: none;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 600px;
+      height: 300px;
+      margin-top: 20px;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      background-color: #fff0f3;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Contador */
+    .contador-estilizado {
+      margin: 20px auto;
+      padding: 20px 30px;
+      background-color: #ffe6ef;
+      color: #d63384;
+      font-size: 2.2rem;
+      font-weight: bold;
+      border-radius: 12px;
+      max-width: 350px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      animation: zoomIn 1s ease;
+    }
+
+    @keyframes zoomIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .music-controls {
+      margin-top: 10px;
+    }
+
+    .music-controls button {
+      background-color: #d63384;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .music-controls button:hover {
+      background-color: #ad266b;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .contador-estilizado { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Áudio -->
+  <audio id="bgMusic" loop>
+    <source src="musica-romantica.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <!-- Banner -->
+  <header>
+    <div>
+      <h1>Débora & Gabriel</h1>
+      <p>Nosso grande dia está chegando!</p>
+    </div>
+  </header>
+
+  <!-- Contador -->
+  <section>
+    <h2>Faltam...</h2>
+    <div id="countdown" class="contador-estilizado">Carregando...</div>
+    <div class="music-controls">
+      <button onclick="playMusic()">🎵 Tocar música</button>
+      <button onclick="pauseMusic()">⏸ Pausar</button>
+    </div>
+  </section>
+
+  <!-- Frase bíblica -->
+  <section class="frase">
+    <p>"Assim, eles já não são dois, mas sim uma só carne. Portanto, o que Deus uniu, ninguém separe."<br>— Mateus 19:6</p>
+  </section>
+
+  <!-- Informações -->
+  <section>
+    <h2>Informações do Casamento</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>📅 Data</h3>
+        <p>06 de Setembro de 2025</p>
+      </div>
+      <div class="info-card">
+        <h3>🕓 Horário</h3>
+        <p>Chegue até 16h30</p>
+      </div>
+      <div class="info-card">
+        <h3>📍 Local</h3>
+        <p>Igreja Batista Filadélfia</p>
+        <p>Av - R. Pres. Quaresma, 1121 - Lagoa Seca</p>
+      </div>
+    </div>
+    <iframe
+      src="https://www.google.com/maps?q=Igreja+Batista+Filadélfia,+Av+-+R.+Pres.+Quaresma,+1121+-+Lagoa+Seca,+Natal+-+RN&output=embed"
+      allowfullscreen
+    ></iframe>
+  </section>
+
+  <!-- Pix -->
+  <section class="pix">
+    <h2>Presentear via Pix</h2>
+    <p>Você pode nos presentear diretamente via Pix usando o QR Code abaixo:</p>
+    <img src="qrcode-pix.jpg" alt="QR Code Pix">
+    <p><strong>Chave Pix:</strong> 84(981867887)</p>
+  </section>
+
+  <!-- Lista -->
+  <section>
+    <h2>Lista de Presentes</h2>
+    <p>Confira nossa lista de presentes na Magalu:</p>
+    <a
+      href="https://www.magazineluiza.com.br/lista-de-casamento/DEBORAeGABRIEL"
+      class="button"
+      target="_blank"
+    >
+      Ir para a Lista
+    </a>
+  </section>
+
+  <!-- Confirmação -->
+  <section>
+    <h2>Confirmação de Presença</h2>
+    <p>Por favor, confirme sua presença clicando no botão abaixo:</p>
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdIsz2mBrYRr9G5RNE0ZqI2aTp2PVwa0O061zFz_G9L0Ln47w/viewform?usp=sharing&ouid=105231913015474185785"
+      class="button"
+      target="_blank"
+    >
+      Confirmar Presença
+    </a>
+  </section>
+
+  <!-- WhatsApp -->
+  <section class="social-buttons">
+    <a
+      href="https://api.whatsapp.com/send/?phone=5584981867887&text&type=phone_number&app_absent=0"
+      target="_blank"
+    >
+      📲 Falar no WhatsApp
+    </a>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    Com carinho, Débora & Gabriel 💕<br/>
+    Setembro de 2025
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function playMusic() {
+      document.getElementById("bgMusic").play();
+    }
+
+    function pauseMusic() {
+      document.getElementById("bgMusic").pause();
+    }
+
+    window.onload = function () {
+      const countdown = document.getElementById("countdown");
+      const targetDate = new Date("2025-09-06T16:30:00").getTime();
+
+      const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance < 0) {
+          countdown.innerHTML = "É hoje! 💍";
+          clearInterval(interval);
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        countdown.innerHTML = `${days} dias ${hours}h ${minutes}min`;
+      }, 1000);
+    };
+  </script>
+
+</body>
+</html>
